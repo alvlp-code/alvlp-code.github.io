@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Argumentation Blog</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .post { margin-bottom: 40px; }
+    .post-title { font-size: 1.5rem; margin-bottom: 5px; }
+    .post-date { color: #888; font-size: 0.9rem; }
+    a { text-decoration: none; }
+  </style>
+</head>
+<body>
+  <h1>Argumentation Blog</h1>
+  <ul>
+    {% for post in site.posts %}
+      <li class="post">
+        <a href="{{ post.url }}"><div class="post-title">{{ post.title }}</div></a>
+        <div class="post-date">{{ post.date | date: "%B %d, %Y" }}</div>
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
